@@ -247,6 +247,48 @@ body{
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    width: 100%;
-    height: 100vh;
+    padding: 40px 80px;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+}
+
+.det{
+    display: flex;
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+}
+
+.det p{
+    margin: 0 10px;
+}
+
+.links li a{
+    color: white;
+    text-decoration: none;
+}
+.links li{
+    list-style: none;
+}
+
+.link h4{
+    text-decoration: underline;
+}
+
+.linksMain{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.link{
+    margin: 0 40px;
+}
+
+.footerBar{
+    background-color: #002147;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
