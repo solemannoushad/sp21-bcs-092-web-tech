@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TopBtn from './components/TopBtn';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Calculator from './pages/Calculator';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route path='/blogs' element={<Blogs/>}/>
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/calculator' element={<Calculator/>}/>
         </Routes>
       </Router>
     </>

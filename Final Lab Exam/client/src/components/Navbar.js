@@ -38,6 +38,7 @@ const Navbar = () => {
             <li><Link to="/#team">Team</Link></li>
             <li><Link to="/#blogs">Blogs</Link></li>
             <li><Link to="/#contact">Contact</Link></li>
+            <li><Link to="/calculator">Calculator</Link></li>
             <Link to='/signup' className="menuBtn">Join</Link>
         </ul>
     </nav>

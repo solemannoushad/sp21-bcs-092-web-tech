@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import imgRoute from "./routes/imgRoute.js"
 import blogsRouter from './routes/blogs.js'
 import authRoutes from './routes/authRoutes.js'
+import calculatorRoutes from './routes/calculatorRoutes.js'
 import cors from "cors"
 import { connectToMongo } from "./config/db.js"
 
@@ -17,6 +18,7 @@ app.use(cors())
 app.use('/api/img', imgRoute);
 app.use('/api/blogs' , blogsRouter);
 app.use('/api/auth', authRoutes);
+app.use('/api/calculator', calculatorRoutes);
 
 
 app.listen(port, () => {
