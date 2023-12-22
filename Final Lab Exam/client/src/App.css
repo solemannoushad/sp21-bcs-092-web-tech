@@ -780,7 +780,7 @@ form textarea{
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
+  margin-top: 7rem;
 }
 
 .calculatorContainer{
@@ -810,4 +810,8 @@ select{
   display: flex;
   justify-content: center;
   margin: 2rem 0;
+}
+
+table{
+  color: white;
 }

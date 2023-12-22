@@ -24,14 +24,6 @@ router.post('/addData', async (req, res) => {
             return res.status(400).json({ error: "Bad Request", message: "Missing required fields." });
         }
 
-        // Assuming Calculator is a Mongoose model
-        const newEntry = await Calculator.create({
-            operand1,
-            operand2,
-            operation,
-            result
-        });
-
         res.status(201).json(newEntry); // 201 Created status for successful creation
     } catch (error) {
         console.error(error.message);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 
 const Calculator = () => {
-  const [credentials, setCredentials] = useState({ operand1: '', operand2: '', operation: '+' });
+  const [credentials, setCredentials] = useState({ operand1: '', operand2: '', operation: 'Operation' });
   const [calculations, setCalculations] = useState([]);
 
   useEffect(() => {
@@ -20,13 +20,26 @@ const Calculator = () => {
     });
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    const operand1 = credentials.operand1;
+    const operation = credentials.operation;
+    const operand2 = credentials.operand2;
     let result = 0;
     if (credentials.operation === '+') {
       result = Number(credentials.operand1) + Number(credentials.operand2);
     } else if (credentials.operation === '-') {
       result = Number(credentials.operand1) - Number(credentials.operand2);
     }
+
+    const response = await fetch(`http://localhost:8000/api/calculator/addData/` , {
+        method: 'POST',
+        headers:{
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({operand1 , operation , operand2, result})
+      });
+
+      const json = await response.json();
 
     // Save the current calculation in the calculations array
     const newCalculation = {
@@ -57,6 +70,7 @@ const Calculator = () => {
           <div className='input-box operandMain'>
             <label htmlFor='operation'>Operation</label>
             <select value={credentials.operation} onChange={handleChange} name='operation' id='operation'>
+              <option value='select' selected={true}>Operation</option>
               <option value='+'>+</option>
               <option value='-'>-</option>
             </select>
